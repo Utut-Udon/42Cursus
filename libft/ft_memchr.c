@@ -6,7 +6,7 @@
 /*   By: fujitaharuki <fujitaharuki@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 00:52:20 by fujitaharuk       #+#    #+#             */
-/*   Updated: 2024/04/08 01:01:29 by fujitaharuk      ###   ########.fr       */
+/*   Updated: 2024/04/08 02:56:57 by fujitaharuk      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	flag = 0;
 	while (n-- > 0 && flag == 0)
 	{
-		if (uc_c == *uc_s++)
+		if (uc_c == *uc_s)
 			flag = 1;
+		uc_s++;
 	}
 	if (flag == 1)
 		return (uc_s);
