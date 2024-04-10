@@ -6,7 +6,7 @@
 /*   By: fujitaharuki <fujitaharuki@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 11:43:22 by fujitaharuk       #+#    #+#             */
-/*   Updated: 2024/04/07 23:51:05 by fujitaharuk      ###   ########.fr       */
+/*   Updated: 2024/04/10 04:26:11 by fujitaharuk      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,4 @@ void	*ft_memset(void *b, int c, size_t len)
 		*(ptr++) = uc;
 	return (b);
 }
+

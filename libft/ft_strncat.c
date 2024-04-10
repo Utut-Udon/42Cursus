@@ -6,7 +6,7 @@
 /*   By: fujitaharuki <fujitaharuki@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 01:12:00 by fujitaharuk       #+#    #+#             */
-/*   Updated: 2024/04/08 01:13:59 by fujitaharuk      ###   ########.fr       */
+/*   Updated: 2024/04/10 06:31:39 by fujitaharuk      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strncat(char *dest, const char *src, size_t n)
 {
-	int	i;
-	int	dest_len;
+	size_t	i;
+	size_t	dest_len;
 
 	i = 0;
 	dest_len = ft_strlen(dest);

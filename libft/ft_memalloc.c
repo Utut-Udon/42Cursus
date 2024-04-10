@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fujitaharuki <fujitaharuki@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 12:07:27 by fujitaharuk       #+#    #+#             */
-/*   Updated: 2024/04/10 06:30:04 by fujitaharuk      ###   ########.fr       */
+/*   Created: 2024/04/10 04:50:26 by fujitaharuk       #+#    #+#             */
+/*   Updated: 2024/04/10 05:08:39 by fujitaharuk      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+void	*ft_memalloc(size_t size)
 {
-	size_t	i;
-	size_t	dest_len;
+	void	*mem;
+	void	*ini;
 
-	i = -1;
-	dest_len = ft_strlen(dest);
-	while (src[++i])
-		dest[dest_len + i] = src[i];
-	dest[dest_len + i] = 0;
-	return (dest);
+	mem = (void *)malloc(size);
+	if (!mem)
+		return (NULL);
+	ini = mem;
+	while (size-- > 0)
+	{
+		mem = 0;
+		mem++;
+	}
+	return (ini);
 }

@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fujitaharuki <fujitaharuki@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 12:07:27 by fujitaharuk       #+#    #+#             */
-/*   Updated: 2024/04/10 06:30:04 by fujitaharuk      ###   ########.fr       */
+/*   Created: 2024/04/10 05:06:49 by fujitaharuk       #+#    #+#             */
+/*   Updated: 2024/04/10 15:52:00 by fujitaharuk      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+char	*ft_strnew(size_t size)
 {
-	size_t	i;
-	size_t	dest_len;
+	char	*newstr;
+	char	*ini;
 
-	i = -1;
-	dest_len = ft_strlen(dest);
-	while (src[++i])
-		dest[dest_len + i] = src[i];
-	dest[dest_len + i] = 0;
-	return (dest);
+	newstr = (char *)malloc(size + 1);
+	if (!newstr)
+		return (NULL);
+	ini = newstr;
+	while (size-- > 0)
+	{
+		*newstr = '\0';
+		newstr++;
+	}
+	*newstr = '\0';
+	return (ini);
 }
