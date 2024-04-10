@@ -6,7 +6,7 @@
 /*   By: fujitaharuki <fujitaharuki@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 08:06:08 by fujitaharuk       #+#    #+#             */
-/*   Updated: 2024/04/10 08:42:37 by fujitaharuk      ###   ########.fr       */
+/*   Updated: 2024/04/10 18:02:35 by fujitaharuk      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strtrim(char const *s)
 		return (NULL);
 	while (*s == ' ' || *s == '\t' || *s == '\n')
 		s++;
-	if (s == '\0')
+	if (*s == '\0')
 		return (ft_strnew(0));
 	len = ft_strlen(s);
 	while (len > 0

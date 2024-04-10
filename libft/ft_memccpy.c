@@ -6,7 +6,7 @@
 /*   By: fujitaharuki <fujitaharuki@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 23:09:24 by fujitaharuk       #+#    #+#             */
-/*   Updated: 2024/04/10 04:25:55 by fujitaharuk      ###   ########.fr       */
+/*   Updated: 2024/04/10 18:04:17 by fujitaharuk      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	uc = (unsigned char)c;
 	uc_dst = (unsigned char *)dst;
 	uc_src = (unsigned char *)src;
-	while (*uc_src && flag == 0)
+	while (*uc_src && flag == 0 && n-- > 0)
 	{
 		*uc_dst = *uc_src;
 		if (*uc_src == uc)
