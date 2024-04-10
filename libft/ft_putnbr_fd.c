@@ -6,7 +6,7 @@
 /*   By: fujitaharuki <fujitaharuki@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:19:56 by fujitaharuk       #+#    #+#             */
-/*   Updated: 2024/04/10 17:20:23 by fujitaharuk      ###   ########.fr       */
+/*   Updated: 2024/04/10 23:49:23 by fujitaharuk      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_putnbr_fd(int n, int fd)
 		n = 147483648;
 	}
 	if (n >= 10)
-		ft_putnbr(n / 10);
+		ft_putnbr_fd(n / 10, fd);
 	num = n % 10 + '0';
 	write (fd, &num, 1);
 }

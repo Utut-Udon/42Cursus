@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fujitaharuki <fujitaharuki@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 05:06:49 by fujitaharuk       #+#    #+#             */
-/*   Updated: 2024/04/10 15:52:00 by fujitaharuk      ###   ########.fr       */
+/*   Created: 2024/04/10 06:15:02 by fujitaharuk       #+#    #+#             */
+/*   Updated: 2024/04/10 23:48:23 by fujitaharuk      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*newstr;
-	char	*ini;
+	char	*substr;
 
-	newstr = (char *)malloc(size + 1);
-	if (!newstr)
+	if (!s)
 		return (NULL);
-	ini = newstr;
-	while (size-- > 0)
-	{
-		*newstr = '\0';
-		newstr++;
-	}
-	*newstr = '\0';
-	return (ini);
+	if (ft_strlen(s) < start)
+		len = 0;
+	else if (ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
+	substr = (char *)malloc(len + 1);
+	if (!substr)
+		return (NULL);
+	ft_strlcpy(substr, s + start, len + 1);
+	return (substr);
 }

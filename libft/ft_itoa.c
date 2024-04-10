@@ -6,7 +6,7 @@
 /*   By: fujitaharuki <fujitaharuki@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:50:35 by fujitaharuk       #+#    #+#             */
-/*   Updated: 2024/04/10 17:29:46 by fujitaharuk      ###   ########.fr       */
+/*   Updated: 2024/04/10 23:48:43 by fujitaharuk      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*getstr(size_t len)
 	size_t	idx;
 
 	idx = 0;
-	dst = ft_strnew(len);
+	dst = malloc(len + 1);
 	if (!dst)
 		return (NULL);
 	while (idx < len)
@@ -48,6 +48,7 @@ char	*getstr(size_t len)
 		dst[idx] = '0';
 		idx++;
 	}
+	dst[idx] = '\0';
 	return (dst);
 }
 
@@ -68,11 +69,9 @@ char	*main_loop(char *dst, int n)
 char	*ft_itoa(int n)
 {
 	char	*dst;
-	size_t	len;
-	size_t	flag;
+	int		flag;
 
-	len = get_numlen(n);
-	dst = getstr(len);
+	dst = getstr(get_numlen(n));
 	if (!dst)
 		return (NULL);
 	flag = 0;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fujitaharuki <fujitaharuki@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 08:43:13 by fujitaharuk       #+#    #+#             */
-/*   Updated: 2024/04/10 17:45:30 by fujitaharuk      ###   ########.fr       */
+/*   Updated: 2024/04/10 23:37:27 by fujitaharuk      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,10 @@ char	*get_word(char const *s, char c, size_t count)
 	w_len = 0;
 	while (s[w_len] != c && s[w_len])
 		w_len++;
-	dst = ft_strnew(w_len);
+	dst = malloc(w_len + 1);
 	if (!dst)
 		return (NULL);
-	dst = ft_strncpy(dst, s, w_len);
+	ft_strlcpy(dst, s, w_len + 1);
 	return (dst);
 }
 
@@ -80,7 +80,7 @@ void	destroy_words(char **dst, size_t count)
 	free (dst);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	size_t	wc;
 	size_t	count;
